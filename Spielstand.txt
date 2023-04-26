@@ -1,0 +1,22 @@
+Spider took 30dmg
+Spider attacked for 20dmg
+Spider took 60dmg
+Spider took 25dmg
+Golem took 25dmg
+Golem attacked for 10dmg
+Golem attacked for 10dmg
+Demon took 60dmg
+Demon attacked for 40dmg
+Demon took 30dmg
+Demon attacked for 40dmg
+Mage attacked for 60dmg
+Mage attacked for 60dmg
+Mage took 40dmg
+Paladin attacked for 30dmg
+Palading took 20dmg
+Paladin attacked for 30dmg
+Palading took 10dmg
+Knight attacked for 25dmg
+Knight took 10dmg
+Knight took 40dmg
+Knight attacked for 25dmg

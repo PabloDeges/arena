@@ -11,9 +11,9 @@ public class HeroGenerator {
 		
 		
 
-		Mage markusRuehl = new Mage(700, "maggus");
-		Paladin peter = new Paladin(150, "peter");
-		Knight karl = new Knight(300, "karl");
+		Mage markusRuehl = new Mage(300, "maggus");
+		Paladin peter = new Paladin(200, "peter");
+		Knight karl = new Knight(100, "karl");
 		
 		Hero[] hArray = {markusRuehl, peter, karl};
 		

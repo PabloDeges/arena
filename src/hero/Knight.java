@@ -23,6 +23,8 @@ public class Knight extends Hero {
 	@Override
 	public void sustainDamage(int dmg) {
 		health -= dmg;
+		if (health <= 0) {
+			health = 0; }
 		logAction("Knight took " + dmg + "dmg");
 	}
 }

@@ -3,20 +3,61 @@ package game;
 import hero.Hero;
 import fiend.Fiend;
 
-public class Game {
+public class Game implements Runnable{
 	
-	public int round = 0;
+	protected String gameName;
+	private int roundCounter = 0;
+	private final int DELAY_IN_MS=100;
+	protected int gameState;
+	
 	private Arena gameArena;
 	
 	public Fiend[] fArr;
 	public Hero[] hArr;
 
-	public Game(Arena gameArena) {
+	public Game(Arena gameArena, String gameName) {
 		this.gameArena = gameArena;
+		this.gameName = gameName;
+		
+	}
+	private int checkIfGameOver() {
+		
+		int sumHeroHealth = 0;
+		int sumEnemyHealth = 0;
+		
+		
+		for (Hero hero : hArr) {
+			sumHeroHealth += hero.getHealth();
+		}
+		
+		for (Fiend fiend : fArr) {
+			sumEnemyHealth += fiend.getHealth();
+		}
+		
+		
+		
+		if (sumHeroHealth == 0) {
+			gameState = -1;
+			return gameState;
+		}
+		else if (sumHeroHealth > 0 && sumEnemyHealth == 0) {
+			gameState = 1;
+			return gameState;
+		}
+		else {
+			gameState = 0;
+			return gameState;
+		}
+			
 	}
 	
+	public int getGameState() {
+		return gameState;
+	}
+	
+	
 	public void iterate() {
-		round++;
+		roundCounter++;
 		
 		 fArr = gameArena.getFiends();
 		 hArr = gameArena.getHeroes();
@@ -60,6 +101,22 @@ public class Game {
 			}
 		}
 		
+		
+	}
+	@Override
+	public void run() {
+		
+		do {
+			iterate();
+			try {
+				Thread.sleep(DELAY_IN_MS);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} while (checkIfGameOver() == 0);
+		
+		System.out.println("name: " + gameName + "roundcount: " + roundCounter);
 		
 	}
 

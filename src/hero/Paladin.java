@@ -21,6 +21,8 @@ public class Paladin extends Hero {
 	@Override
 	public void sustainDamage(int dmg) {
 		health -= dmg;
+		if (health <= 0) {
+			health = 0; }
 		logAction("Palading took " + dmg  + "dmg");
 	}
 

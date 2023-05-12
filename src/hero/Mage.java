@@ -21,6 +21,8 @@ public class Mage extends Hero{
 	@Override
 	public void sustainDamage(int dmg) {
 		health -= dmg;
+		if (health <= 0) {
+			health = 0; }
 		logAction("Mage took " + dmg  + "dmg");
 	}
 }

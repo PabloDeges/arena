@@ -119,5 +119,9 @@ public class Game implements Runnable{
 		System.out.println("name: " + gameName + "roundcount: " + roundCounter);
 		
 	}
+	
+	public Arena getArena() {
+		return gameArena;
+	}
 
 }

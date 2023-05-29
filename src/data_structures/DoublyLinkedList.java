@@ -12,10 +12,6 @@ public class DoublyLinkedList {
 	private DoublyLinkedListElement first;
 	private DoublyLinkedListElement last;
 
-	public DoublyLinkedList() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public DoublyLinkedListElement getFirst() {
 		return first;
 	}
